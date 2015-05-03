@@ -2,19 +2,21 @@
 #
 # Table name: stories
 #
-#  id          :integer          not null, primary key
-#  title       :string
-#  description :string
-#  hours       :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id            :integer          not null, primary key
+#  title         :string
+#  description   :string
+#  hours         :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  department_id :integer
 #
 
 require 'rails_helper'
 
 RSpec.describe Story, type: :model do
   it 'is valid with all the field' do
-
+    story = FactoryGirl.build(:story)
+    expect(story).to be_valid
   end
 
   it 'is invalid with no name' do

@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+= MODELS
 
-Things you may want to cover:
+- department
+- story
+- team
+- user
+- user_department
 
-* Ruby version
+= relationship =
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+department belongs_to team
+department has_many user
+user belongs to team
+user has_many departments
+team has_many user
+team has_many departments
+story belongs to department
+department has_many stories

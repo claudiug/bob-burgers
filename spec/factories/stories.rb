@@ -2,12 +2,13 @@
 #
 # Table name: stories
 #
-#  id          :integer          not null, primary key
-#  title       :string
-#  description :string
-#  hours       :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id            :integer          not null, primary key
+#  title         :string
+#  description   :string
+#  hours         :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  department_id :integer
 #
 
 FactoryGirl.define do

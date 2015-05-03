@@ -12,6 +12,7 @@
 
 class Department < ActiveRecord::Base
   belongs_to :team
+  has_many :stories
   has_many :user_departments
   has_many :users, through: :user_departments
   validates :name, presence: true
