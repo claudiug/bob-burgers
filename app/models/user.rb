@@ -2,15 +2,17 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  email      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  team_id    :integer
+#  id              :integer          not null, primary key
+#  name            :string
+#  email           :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  team_id         :integer
+#  password_digest :string
 #
 
 class User < ActiveRecord::Base
+  has_secure_password
   belongs_to :team
   has_many :user_departments
   has_many :departments, through: :user_departments

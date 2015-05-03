@@ -62,4 +62,13 @@ RSpec.describe Department, type: :model do
     d.users << [u, u1]
     expect(d.users.pluck(:name)).to eq ['foo', 'foo1']
   end
+
+  it 'should be able to assing stories to a department' do
+    s = FactoryGirl.create(:story, title: 'foo')
+    s1 = FactoryGirl.create(:story, title: 'foo1')
+    d = FactoryGirl.create(:department)
+    d.stories << [s, s1]
+    expect(d.stories.count).to eq 2
+    expect(d.stories.pluck(:title)).to eq ['foo', 'foo1']
+  end
 end

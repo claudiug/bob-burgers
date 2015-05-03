@@ -1,0 +1,6 @@
+= @user.name
+= @user.departments.pluck(:name)
+
+%p create a new department?
+
+= link_to 'new department', new_user_department_path(@user)

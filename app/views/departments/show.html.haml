@@ -1,0 +1,6 @@
+= @department.stories.count
+= @department.name
+
+%p add a new story for this department?
+
+= link_to 'new department', new_user_department_story_path(@user, @department)
